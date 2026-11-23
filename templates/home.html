@@ -7,8 +7,10 @@
 
 {% block content %}
 
-    {% for todo in todos %}
-        <a href="/detail/{{todo.id}}/">{{ todo.title }}</a>
-    {% endfor %}
-
+   {% for todo in todos %}
+       <a href="{% url 'detail' todo.id %}"
+           style="display: block; color: blue; margin: 10px 0;">
+            {{ todo.title }}
+        </a>
+{% endfor %}
 {% endblock content %}
