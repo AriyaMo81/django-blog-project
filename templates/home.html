@@ -6,6 +6,7 @@
 
 {% block content %}
 
+<a href="{% url "create" %}" class="btn btn-info">create todo</a>
 <div class="container mt-4">
 
     <h4 class="mb-3">Todo List</h4>
@@ -16,8 +17,6 @@
                class="list-group-item list-group-item-action">
                 {{ todo.title }}
             </a>
-        {% empty %}
-            <p class="text-muted">هنوز کاری اضافه نکردی!</p>
         {% endfor %}
     </div>
 

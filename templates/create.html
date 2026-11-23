@@ -2,7 +2,8 @@
 
 {% block content %}
 <h3>create new todo</h3>
-<form>
+<form method="post" action="" novalidate>
+    {% csrf_token %}
     {{form}}
     <input type="submit" value="create">
 </form>
