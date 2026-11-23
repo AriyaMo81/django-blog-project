@@ -6,6 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h3>hello user </h3>
+    {% if name == 'admin' %}
+        <p>you are admin</p>
+    {% else %}
+         <h3>hello {{name|upper}} </h3>
+    {% endif %}
+    
 </body>
 </html>

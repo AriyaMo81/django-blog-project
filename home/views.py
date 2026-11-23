@@ -9,4 +9,5 @@ def home(request):
 
 
 def say_hello(request):
-    return render(request, "hello.html")
+    # person = {"name": "ariya"}
+    return render(request, "hello.html", {"name": "ariya"})
