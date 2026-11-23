@@ -1,4 +1,3 @@
-
 {% extends "base.html" %}
 
 {% block title %}
@@ -7,10 +6,21 @@
 
 {% block content %}
 
-   {% for todo in todos %}
-       <a href="{% url 'detail' todo.id %}"
-           style="display: block; color: blue; margin: 10px 0;">
-            {{ todo.title }}
-        </a>
-{% endfor %}
+<div class="container mt-4">
+
+    <h4 class="mb-3">Todo List</h4>
+
+    <div class="list-group">
+        {% for todo in todos %}
+            <a href="{% url 'detail' todo.id %}"
+               class="list-group-item list-group-item-action">
+                {{ todo.title }}
+            </a>
+        {% empty %}
+            <p class="text-muted">هنوز کاری اضافه نکردی!</p>
+        {% endfor %}
+    </div>
+
+</div>
+
 {% endblock content %}
