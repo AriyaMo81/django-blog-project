@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import UserCreateForm, UserloginForm
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 
 # Create your views here.
@@ -51,3 +51,9 @@ def login_user(request):
     else:
         form = UserloginForm()
         return render(request, "user_login.html", {"form": form})
+
+
+def logout_user(request):
+    logout(request)
+    messages.success(request, "logout successfully")
+    return redirect("home")
