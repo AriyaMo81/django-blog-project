@@ -1,8 +1,11 @@
-
 <nav class="navbar bg-dark">
-    <div class="container">
-        <a class="navbar-brand text-white" href="{% url "home" %}">
+    <div class="container d-flex justify-content-start gap-3">
+        <a class="navbar-brand text-white" href="{% url 'home' %}">
             Home
+        </a>
+
+        <a class="navbar-brand text-white" href="{% url 'create_user' %}">
+            Sign up
         </a>
     </div>
 </nav>
